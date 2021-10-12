@@ -7,6 +7,10 @@ def read_template(filePath):
     return openFile.read()
 
 def parse_template(upDateText):
+    """
+    in this function we split new sentene and add it to list after that remove adjective from inter sentence 
+    by using regeicx ,and after that commpined into new sentence 
+    """
     parseEmp=''
     newTestList=[]
     addTextToList=upDateText.split(' ')
@@ -25,3 +29,9 @@ def parse_template(upDateText):
     newTestList=tuple(newTestList)
     return (parseEmp,newTestList)
 
+   
+def merge(upDateText,indexWord):
+    """
+    replace {} inside upDateText with index from indexWord by order 
+    """
+    return upDateText.format(*indexWord)
