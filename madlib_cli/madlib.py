@@ -11,9 +11,9 @@ def parse_template(upDateText):
     newTestList=[]
     addTextToList=upDateText.split(' ')
     print(addTextToList)
-    reg=r"^{\w+}|\.$"
+    AdjectiveReg=r"^{\w+}|\.$"
     for i in addTextToList:
-        if re.match(reg,i)==None :
+        if re.match(AdjectiveReg,i)==None :
             parseEmp+=f"{i} "
         else :
             if i==addTextToList[-1]:
