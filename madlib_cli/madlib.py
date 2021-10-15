@@ -52,5 +52,3 @@ def game_data():
     output_file(result)
 
     
-
-# get_data()
