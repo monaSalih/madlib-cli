@@ -44,7 +44,6 @@ def game_data():
     game_text = read_template("assets/make_me_a_video_game_template.txt")
     new_text, text_saved = parse_template(game_text)
     game_input = []
-
     for i in range(len(text_saved)):
         x = input('enter a {} > '.format(text_saved[i]))
         game_input.append(x)
