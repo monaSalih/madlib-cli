@@ -15,8 +15,9 @@ def parse_template(upDateText):
     newTestList=[]
     addTextToList=upDateText.split(' ')
     AdjectiveReg=r"^{\w+}|\.$"
+    AdjectiveReg2=AdjectiveReg.strip()
     for i in addTextToList:
-        if re.match(AdjectiveReg,i)==None :
+        if re.match(AdjectiveReg2,i)==None :
             parseEmp+=f"{i} "
         else :
             if i==addTextToList[-1]:
@@ -49,6 +50,8 @@ def game_data():
         game_input.append(x)
     result = new_text.format(*game_input)
     print(result)
+    # print(game_input)
     output_file(result)
 
     
+game_data()
