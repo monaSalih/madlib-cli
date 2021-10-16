@@ -4,7 +4,7 @@ print ("Welcom to our madlib game i hope you enjoying, please answer the questio
 def read_template(filePath):
     openFile=open(filePath)
     # readFile=openFile.read
-    return openFile.read()
+    return openFile.read().strip("\n")
 
 def parse_template(upDateText):
     """
@@ -41,7 +41,7 @@ def output_file(result):
         f.write(result)
 
      
-def game_data():
+if __name__ == "__main__":
     game_text = read_template("assets/make_me_a_video_game_template.txt")
     new_text, text_saved = parse_template(game_text)
     game_input = []
@@ -49,9 +49,29 @@ def game_data():
         x = input('enter a {} > '.format(text_saved[i]))
         game_input.append(x)
     result = new_text.format(*game_input)
+    print ("🎉🎉following game result")
     print(result)
-    # print(game_input)
     output_file(result)
 
     
-game_data()
+
+
+# def output_file2(result):
+#     with open("assets/dark_and_stormy_night_template.txt", "w") as f:
+#         f.write(result)
+
+     
+# def game_data2():
+#     game_text = read_template("assets/dark_result.txt")
+#     new_text, text_saved = parse_template(game_text)
+#     game_input = []
+#     for i in range(len(text_saved)):
+#         x = input('enter a {} > '.format(text_saved[i]))
+#         game_input.append(x)
+#     result = new_text.format(*game_input)
+#     print ("🎉🎉following game result")
+#     print(result)
+#     output_file2(result)
+
+    
+# game_data2()
